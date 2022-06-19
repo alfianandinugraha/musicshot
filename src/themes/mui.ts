@@ -2,6 +2,11 @@ import { createTheme } from "@mui/material";
 import { green } from "@mui/material/colors";
 
 const muiTheme = createTheme({
+  typography: {
+    h5: {
+      fontWeight: "bold",
+    },
+  },
   components: {
     MuiBottomNavigationAction: {
       styleOverrides: {
