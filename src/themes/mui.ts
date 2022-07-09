@@ -1,10 +1,14 @@
 import { createTheme } from "@mui/material";
-import { green } from "@mui/material/colors";
+import { green, grey } from "@mui/material/colors";
 
 const muiTheme = createTheme({
   typography: {
     h5: {
       fontWeight: "bold",
+    },
+    caption: {
+      fontStyle: "italic",
+      color: grey[400],
     },
   },
   components: {
