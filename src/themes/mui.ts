@@ -12,6 +12,16 @@ const muiTheme = createTheme({
     },
   },
   components: {
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          backgroundColor: green[600],
+          ["&:hover"]: {
+            backgroundColor: green[700],
+          },
+        },
+      },
+    },
     MuiBottomNavigationAction: {
       styleOverrides: {
         label: {
