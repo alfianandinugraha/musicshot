@@ -1,10 +1,14 @@
 import { createTheme } from "@mui/material";
-import { green, grey } from "@mui/material/colors";
+import { green, grey, red } from "@mui/material/colors";
 
 const muiTheme = createTheme({
   palette: {
     primary: {
       ...green,
+      contrastText: "white",
+    },
+    error: {
+      ...red,
       contrastText: "white",
     },
   },
@@ -18,16 +22,6 @@ const muiTheme = createTheme({
     },
   },
   components: {
-    MuiButton: {
-      styleOverrides: {
-        contained: {
-          backgroundColor: green[600],
-          ["&:hover"]: {
-            backgroundColor: green[700],
-          },
-        },
-      },
-    },
     MuiBottomNavigationAction: {
       styleOverrides: {
         label: {
