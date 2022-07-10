@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "@/pages/home";
 import PlayingPage from "./pages/playing";
 import PlaylistPage from "./pages/playlist";
+import TrackPlayer from "./components/track-player";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/playing" element={<PlayingPage />} />
         <Route path="/playlist" element={<PlaylistPage />} />
       </Routes>
+      <TrackPlayer />
       <Navigation />
     </>
   );
