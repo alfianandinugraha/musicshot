@@ -13,6 +13,8 @@ import trackSlice from "@/store/slice/track-slice";
 import { shallowEqual } from "react-redux";
 import useAudioElement from "@/hooks/use-audio-element";
 import TrackRange from "@/components/track-range";
+import RewindButton from "@/components/rewind-button";
+import ForwardButton from "@/components/forward-button";
 
 const PlayingPage = () => {
   const track = useAppSelector(
@@ -78,15 +80,7 @@ const PlayingPage = () => {
                   justifyContent="center"
                   mx="auto"
                 >
-                  <IconButton
-                    color="primary"
-                    onClick={() => {
-                      dispatch(trackSlice.actions.rewind());
-                      rewind();
-                    }}
-                  >
-                    <RewindIcon style={{ width: "1.5rem", height: "1.5rem" }} />
-                  </IconButton>
+                  <RewindButton />
                   <IconButton
                     color="primary"
                     onClick={(e) => {
@@ -113,17 +107,7 @@ const PlayingPage = () => {
                       <RefreshIcon style={{ width: "4rem", height: "4rem" }} />
                     )}
                   </IconButton>
-                  <IconButton
-                    color="primary"
-                    onClick={() => {
-                      dispatch(trackSlice.actions.forward());
-                      forward();
-                    }}
-                  >
-                    <FastForwardIcon
-                      style={{ width: "1.5rem", height: "1.5rem" }}
-                    />
-                  </IconButton>
+                  <ForwardButton />
                 </Box>
               </Box>
             );
