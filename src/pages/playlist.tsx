@@ -28,7 +28,7 @@ const PlaylistPage = () => {
               imageUrl={`https://api.napster.com/imageserver/v2/albums/${track.albumId}/images/300x300.jpg`}
               onClickPlay={() => {
                 play(track.previewURL);
-                dispatch(trackSlice.actions.play(track));
+                dispatch(trackSlice.actions.start(track));
               }}
             />
           );
