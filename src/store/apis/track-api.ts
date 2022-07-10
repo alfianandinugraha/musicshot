@@ -1,4 +1,4 @@
-import baseApi from "@/store/apis/baseApi";
+import baseApi from "@/store/apis/base-api";
 import { Track } from "model";
 
 const trackApi = baseApi.injectEndpoints({

@@ -2,7 +2,7 @@ import TrackCard from "@/components/track-card";
 import useAudioElement from "@/hooks/use-audio-element";
 import BaseLayout from "@/layouts/base-layout";
 import { useAppSelector } from "@/store";
-import { useGetAllTopQuery } from "@/store/apis/trackApi";
+import { useGetAllTopQuery } from "@/store/apis/track-api";
 import trackSlice from "@/store/slice/track-slice";
 import { Button, CircularProgress, Typography } from "@mui/material";
 import { Box } from "@mui/system";
