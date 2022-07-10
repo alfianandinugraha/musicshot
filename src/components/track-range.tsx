@@ -28,7 +28,7 @@ const TrackRange = () => {
             <Box
               {...props}
               mx="auto"
-              mt="2rem"
+              mt="1rem"
               style={{
                 ...props.style,
                 height: "6px",

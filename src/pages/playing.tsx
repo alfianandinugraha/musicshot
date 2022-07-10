@@ -50,8 +50,8 @@ const PlayingPage = () => {
                 <Box
                   component="img"
                   src={`https://api.napster.com/imageserver/v2/albums/${track?.albumId}/images/300x300.jpg`}
-                  width="200px"
-                  height="200px"
+                  width="180px"
+                  height="180px"
                   mx="auto"
                   borderRadius="8px"
                 />
@@ -77,7 +77,6 @@ const PlayingPage = () => {
                   alignItems="center"
                   justifyContent="center"
                   mx="auto"
-                  mt="1rem"
                 >
                   <IconButton
                     color="primary"
