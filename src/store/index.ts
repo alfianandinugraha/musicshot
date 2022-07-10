@@ -8,6 +8,9 @@ const store = configureStore({
     [baseApi.reducerPath]: baseApi.reducer,
     track: trackSlice.reducer,
   },
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware().concat(baseApi.middleware);
+  },
 });
 
 type AppDispatch = typeof store.dispatch;
