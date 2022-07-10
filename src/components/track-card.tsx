@@ -6,6 +6,7 @@ type TrackCardProps = {
   title: string;
   artist: string;
   imageUrl: string;
+  onClickPlay?: () => void;
 };
 
 const TrackCard = (props: TrackCardProps) => {
@@ -24,6 +25,7 @@ const TrackCard = (props: TrackCardProps) => {
           </Box>
           <Button
             variant="contained"
+            onClick={props.onClickPlay}
             startIcon={<PlayIcon style={{ width: "1rem", height: "1rem" }} />}
             sx={{
               mt: ".5rem",
