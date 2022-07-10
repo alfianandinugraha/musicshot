@@ -7,6 +7,7 @@ type TrackCardProps = {
   artist: string;
   imageUrl: string;
   onClickPlay?: () => void;
+  isPlaying?: boolean;
 };
 
 const TrackCard = (props: TrackCardProps) => {
@@ -30,8 +31,9 @@ const TrackCard = (props: TrackCardProps) => {
             sx={{
               mt: ".5rem",
             }}
+            disabled={props.isPlaying}
           >
-            Play
+            {props.isPlaying ? "Playing" : "Play"}
           </Button>
         </Box>
         <Box
