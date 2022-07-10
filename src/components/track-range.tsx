@@ -1,6 +1,7 @@
 import useAudioElement from "@/hooks/use-audio-element";
 import { useAppDispatch, useAppSelector } from "@/store";
 import trackSlice from "@/store/slice/track-slice";
+import { secondsToMinute } from "@/utils/time";
 import { Box, Typography } from "@mui/material";
 import { green } from "@mui/material/colors";
 import { Range } from "react-range";
@@ -60,8 +61,8 @@ const TrackRange = () => {
         justifyContent="space-between"
         mt=".5rem"
       >
-        <Typography>00:{Math.ceil(currentTime)}</Typography>
-        <Typography>00:{Math.ceil(duration)}</Typography>
+        <Typography>{secondsToMinute(Math.ceil(currentTime))}</Typography>
+        <Typography>{secondsToMinute(Math.ceil(duration))}</Typography>
       </Box>
     </Box>
   );
