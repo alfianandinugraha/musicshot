@@ -19,7 +19,7 @@ const PlayingPage = () => {
     shallowEqual
   );
   const status = useAppSelector((value) => value.track.status);
-  const { play, pause } = useAudioElement();
+  const { play, pause, rewind, forward } = useAudioElement();
   const dispatch = useAppDispatch();
 
   return (
@@ -78,7 +78,13 @@ const PlayingPage = () => {
                   mx="auto"
                   mt="1rem"
                 >
-                  <IconButton color="primary">
+                  <IconButton
+                    color="primary"
+                    onClick={() => {
+                      dispatch(trackSlice.actions.rewind());
+                      rewind();
+                    }}
+                  >
                     <RewindIcon style={{ width: "1.5rem", height: "1.5rem" }} />
                   </IconButton>
                   <IconButton
@@ -104,7 +110,13 @@ const PlayingPage = () => {
                       <StopIcon style={{ width: "4rem", height: "4rem" }} />
                     )}
                   </IconButton>
-                  <IconButton color="primary">
+                  <IconButton
+                    color="primary"
+                    onClick={() => {
+                      dispatch(trackSlice.actions.forward());
+                      forward();
+                    }}
+                  >
                     <FastForwardIcon
                       style={{ width: "1.5rem", height: "1.5rem" }}
                     />

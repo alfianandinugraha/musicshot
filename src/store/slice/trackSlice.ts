@@ -14,6 +14,8 @@ type TrackReducer = {
   start: (state: TrackState, action: PayloadAction<Track | undefined>) => void;
   pause: (state: TrackState) => void;
   finish: (state: TrackState) => void;
+  rewind: (state: TrackState) => void;
+  forward: (state: TrackState) => void;
   progress: (state: TrackState, action: PayloadAction<number>) => void;
   play: (state: TrackState, action: PayloadAction<number>) => void;
 };
@@ -42,6 +44,16 @@ const trackSlice = createSlice<TrackState, TrackReducer>({
     },
     play(state, action) {
       state.duration = action.payload;
+      state.status = "PLAY";
+    },
+    rewind(state) {
+      const time = state.currentTime - 5;
+      state.currentTime = time < 0 ? 0 : time;
+      state.status = "PLAY";
+    },
+    forward(state) {
+      const time = state.currentTime + 5;
+      state.currentTime = time >= state.duration ? state.duration : time;
       state.status = "PLAY";
     },
   },

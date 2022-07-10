@@ -20,9 +20,27 @@ const useAudioElement = () => {
     audioEl.current?.pause();
   };
 
+  const rewind = () => {
+    init();
+    if (!audioEl.current) return;
+    audioEl.current.pause();
+    audioEl.current.currentTime = audioEl.current.currentTime - 5;
+    audioEl.current.play();
+  };
+
+  const forward = () => {
+    init();
+    if (!audioEl.current) return;
+    audioEl.current.pause();
+    audioEl.current.currentTime = audioEl.current.currentTime + 5;
+    audioEl.current.play();
+  };
+
   return {
     play,
     pause,
+    rewind,
+    forward,
   };
 };
 

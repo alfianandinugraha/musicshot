@@ -12,7 +12,6 @@ const TrackRange = () => {
   return (
     <Box width="80%" mx="auto">
       <Range
-        step={1}
         min={0}
         disabled
         max={Math.ceil(duration)}
