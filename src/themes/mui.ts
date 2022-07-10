@@ -2,6 +2,12 @@ import { createTheme } from "@mui/material";
 import { green, grey } from "@mui/material/colors";
 
 const muiTheme = createTheme({
+  palette: {
+    primary: {
+      ...green,
+      contrastText: "white",
+    },
+  },
   typography: {
     h5: {
       fontWeight: "bold",
