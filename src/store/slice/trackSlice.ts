@@ -31,7 +31,7 @@ const trackSlice = createSlice<TrackState, TrackReducer>({
   reducers: {
     start(state: TrackState, action) {
       state.currentTrack = action.payload ?? state.currentTrack;
-      state.status = state.currentTrack ? "PLAY" : "FETCHING";
+      state.status = action.payload ? "FETCHING" : "PLAY";
     },
     pause(state: TrackState) {
       state.status = "PAUSE";
