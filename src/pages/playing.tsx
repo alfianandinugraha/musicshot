@@ -5,6 +5,7 @@ import XCircleIcon from "@heroicons/react/solid/XCircleIcon";
 import RewindIcon from "@heroicons/react/solid/RewindIcon";
 import FastForwardIcon from "@heroicons/react/solid/FastForwardIcon";
 import StopIcon from "@heroicons/react/solid/StopIcon";
+import RefreshIcon from "@heroicons/react/solid/RefreshIcon";
 import { CircularProgress, IconButton, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Box } from "@mui/system";
@@ -103,11 +104,14 @@ const PlayingPage = () => {
                       }
                     }}
                   >
-                    {(status === "PAUSE" || status === "FINISH") && (
+                    {status === "PAUSE" && (
                       <PlayIcon style={{ width: "4rem", height: "4rem" }} />
                     )}
                     {status === "PLAY" && (
                       <StopIcon style={{ width: "4rem", height: "4rem" }} />
+                    )}
+                    {status === "FINISH" && (
+                      <RefreshIcon style={{ width: "4rem", height: "4rem" }} />
                     )}
                   </IconButton>
                   <IconButton
