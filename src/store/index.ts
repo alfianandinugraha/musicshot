@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import baseApi from "@/store/apis/baseApi";
-import trackSlice from "./slice/trackSlice";
+import trackSlice from "./slice/track-slice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 const store = configureStore({

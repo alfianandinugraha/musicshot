@@ -9,7 +9,7 @@ import RefreshIcon from "@heroicons/react/solid/RefreshIcon";
 import { CircularProgress, IconButton, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Box } from "@mui/system";
-import trackSlice from "@/store/slice/trackSlice";
+import trackSlice from "@/store/slice/track-slice";
 import { shallowEqual } from "react-redux";
 import useAudioElement from "@/hooks/use-audio-element";
 import TrackRange from "@/components/track-range";

@@ -1,6 +1,6 @@
 import useAudioElement from "@/hooks/use-audio-element";
 import { useAppDispatch, useAppSelector } from "@/store";
-import trackSlice from "@/store/slice/trackSlice";
+import trackSlice from "@/store/slice/track-slice";
 import { Box, Typography } from "@mui/material";
 import { green } from "@mui/material/colors";
 import { Range } from "react-range";

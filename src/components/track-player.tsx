@@ -1,5 +1,5 @@
 import { useAppDispatch } from "@/store";
-import trackSlice from "@/store/slice/trackSlice";
+import trackSlice from "@/store/slice/track-slice";
 import { useRef } from "react";
 import { useThrottledCallback } from "use-debounce";
 

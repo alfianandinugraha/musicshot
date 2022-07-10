@@ -3,7 +3,7 @@ import useAudioElement from "@/hooks/use-audio-element";
 import BaseLayout from "@/layouts/base-layout";
 import { useAppSelector } from "@/store";
 import { useGetAllTopQuery } from "@/store/apis/trackApi";
-import trackSlice from "@/store/slice/trackSlice";
+import trackSlice from "@/store/slice/track-slice";
 import { Button, CircularProgress, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useDispatch } from "react-redux";
