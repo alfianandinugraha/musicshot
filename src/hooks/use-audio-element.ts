@@ -36,11 +36,19 @@ const useAudioElement = () => {
     audioEl.current.play();
   };
 
+  const setTime = (seconds: number) => {
+    init();
+    if (!audioEl.current) return;
+
+    audioEl.current.currentTime = seconds;
+  };
+
   return {
     play,
     pause,
     rewind,
     forward,
+    setTime,
   };
 };
 

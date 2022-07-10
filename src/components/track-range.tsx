@@ -1,4 +1,6 @@
-import { useAppSelector } from "@/store";
+import useAudioElement from "@/hooks/use-audio-element";
+import { useAppDispatch, useAppSelector } from "@/store";
+import trackSlice from "@/store/slice/trackSlice";
 import { Box, Typography } from "@mui/material";
 import { green } from "@mui/material/colors";
 import { Range } from "react-range";
@@ -6,6 +8,8 @@ import { Range } from "react-range";
 const TrackRange = () => {
   const duration = useAppSelector((value) => value.track.duration);
   const currentTime = useAppSelector((value) => value.track.currentTime);
+  const { setTime } = useAudioElement();
+  const dispatch = useAppDispatch();
 
   const trackFillWidth = (currentTime / Math.ceil(duration)) * 100;
 
@@ -13,9 +17,11 @@ const TrackRange = () => {
     <Box width="80%" mx="auto">
       <Range
         min={0}
-        disabled
         max={Math.ceil(duration)}
-        onChange={() => {}}
+        onChange={(e) => {
+          dispatch(trackSlice.actions.progress(e[0]));
+          setTime(e[0]);
+        }}
         values={[Math.ceil(currentTime)]}
         renderTrack={({ props, children }) => {
           return (
