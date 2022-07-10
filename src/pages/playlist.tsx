@@ -1,4 +1,5 @@
 import TrackCard from "@/components/track-card";
+import useAudioElement from "@/hooks/use-audio-element";
 import BaseLayout from "@/layouts/base-layout";
 import { useGetAllTopQuery } from "@/store/apis/trackApi";
 import trackSlice from "@/store/slice/trackSlice";
@@ -8,6 +9,7 @@ import { useDispatch } from "react-redux";
 
 const PlaylistPage = () => {
   const { data: tracks = [] } = useGetAllTopQuery();
+  const { play } = useAudioElement();
   const dispatch = useDispatch();
 
   return (
@@ -25,14 +27,8 @@ const PlaylistPage = () => {
               title={track.albumName}
               imageUrl={`https://api.napster.com/imageserver/v2/albums/${track.albumId}/images/300x300.jpg`}
               onClickPlay={() => {
+                play(track.previewURL);
                 dispatch(trackSlice.actions.play(track));
-
-                const audio = document.getElementById(
-                  "track-player"
-                ) as HTMLAudioElement;
-                audio.src = track.previewURL;
-
-                audio.play();
               }}
             />
           );

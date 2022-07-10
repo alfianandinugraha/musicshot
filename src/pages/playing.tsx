@@ -11,21 +11,16 @@ import { Box } from "@mui/system";
 import { useRef } from "react";
 import trackSlice from "@/store/slice/trackSlice";
 import { shallowEqual } from "react-redux";
+import useAudioElement from "@/hooks/use-audio-element";
 
 const PlayingPage = () => {
-  const audioEl = useRef<HTMLAudioElement | null>();
   const track = useAppSelector(
     (value) => value.track.currentTrack,
     shallowEqual
   );
   const status = useAppSelector((value) => value.track.status);
+  const { play, pause } = useAudioElement();
   const dispatch = useAppDispatch();
-
-  const initAudioElement = () => {
-    const element = document.getElementById("track-player") as HTMLAudioElement;
-
-    audioEl.current = element;
-  };
 
   return (
     <BaseLayout>
@@ -81,18 +76,14 @@ const PlayingPage = () => {
             <IconButton
               color="primary"
               onClick={(e) => {
-                initAudioElement();
-
-                const element = audioEl.current;
-
                 switch (status) {
                   case "PAUSE":
                   case "FINISH":
-                    element?.play();
+                    play();
                     dispatch(trackSlice.actions.play());
                     break;
                   case "PLAY":
-                    element?.pause();
+                    pause();
                     dispatch(trackSlice.actions.pause());
                     break;
                 }
